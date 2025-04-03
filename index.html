@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Watchlist - Find Films</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- Our CSS file -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-content">
+        <h1>Find your film</h1>
+        <a href="watchlist.html" class="nav-link">My Watchlist</a>
+      </div>
+      <div class="search-bar-container">
+        <form id="search-form" class="search-bar">
+          <label for="search-input" class="sr-only">Search for movies</label>
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for a movie"
+            required
+          />
+          <button type="submit" id="search-button">Search</button>
+        </form>
+
+        <div id="search-preview" class="search-preview"></div>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content container">
+      <!-- Initial Placeholder -->
+      <div class="placeholder" id="start-exploring">
+        <i class="fa-solid fa-film placeholder-icon"></i>
+        <p>Start exploring</p>
+      </div>
+
+      <!-- This area will be populated with search results -->
+      <div id="movie-list" class="movie-list">
+        <!-- Movie items will be injected here by JavaScript -->
+      </div>
+
+      <!-- Error message for when searches fail -->
+      <div class="placeholder" id="error-message" style="display: none">
+        <p>
+          Unable to find what you're looking for. Please try another search.
+        </p>
+      </div>
+    </main>
+
+    <!-- Link JavaScript file -->
+    <script src="index.js" type="module" defer></script>
+  </body>
+</html>

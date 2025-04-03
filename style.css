@@ -1,0 +1,495 @@
+/* Step 1: CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #121212;
+}
+
+/* Hide screen reader only elements visually but keep them accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Base container for content positioning */
+.container {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 550px;
+}
+.header {
+  background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-position: center;
+  background-color: #2c2c2c; /* Fallback color */
+  color: white;
+  padding: 2rem 0 1rem;
+  position: relative;
+}
+
+/* Dark overlay for better text readability */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1; /* This is needed to display content above the overlay */
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+/* Step 3: Search Bar Styling */
+.search-bar-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1.25rem;
+}
+
+.search-bar {
+  background-color: #2e2e2f;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.search-icon {
+  color: #9ca3af;
+  margin: 0 0.5rem;
+}
+
+#search-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+#search-input::placeholder {
+  color: #9ca3af;
+}
+
+#search-button {
+  background-color: #4b4b4b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#search-button:hover {
+  background-color: #5a5a5a;
+}
+
+/* Step 4: Main Content Area and Placeholders */
+.main-content {
+  padding-top: 2rem;
+  min-height: calc(100vh - 150px);
+}
+
+/* Updated search bar styles */
+.search-bar-container {
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+  margin-bottom: -1.25rem;
+}
+
+.search-bar {
+  background-color: #2e2e2f;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+/* Placeholder styling */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #787878;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.placeholder p {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.movie-list {
+  padding: 1rem 0;
+}
+
+/* Step 5: Movie List Item Styling */
+.movie-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+.movie-poster {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.movie-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.movie-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  color: #ffc107;
+  font-size: 0.875rem;
+}
+
+.movie-rating i {
+  margin-right: 0.25rem;
+}
+
+.movie-details {
+  display: flex;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 0.875rem;
+}
+
+.movie-details > span {
+  margin-right: 1rem;
+}
+
+.movie-genre {
+  font-weight: 400;
+}
+
+.movie-plot {
+  font-size: 0.875rem;
+  color: #d1d5db;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.watchlist-btn {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.watchlist-btn i {
+  margin-right: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.watchlist-btn:hover {
+  color: #10b981;
+}
+
+/* Step 6: Responsive Design Adjustments */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .header h1 {
+    font-size: 2.25rem;
+  }
+
+  .search-bar {
+    padding: 0.75rem;
+  }
+
+  #search-input {
+    font-size: 1rem;
+  }
+
+  #search-button {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .movie-poster {
+    width: 120px;
+    height: 180px;
+    margin-right: 1.5rem;
+  }
+
+  .movie-title {
+    font-size: 1.25rem;
+  }
+
+  .movie-details {
+    font-size: 0.875rem;
+  }
+
+  .movie-plot {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .header {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .movie-item {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+}
+/* Step 7: Final Touches and Special States */
+/* Empty state for watchlist page */
+.watchlist-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #787878;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.watchlist-empty i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.watchlist-empty p {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.watchlist-empty a {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.watchlist-empty a i {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.loading i {
+  color: #9ca3af;
+  font-size: 2rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button states */
+.watchlist-btn.active {
+  color: #10b981;
+}
+
+.watchlist-btn.active i {
+  content: "\f00c"; /* Font Awesome check icon */
+}
+
+/* Utility classes */
+.text-small {
+  font-size: 0.75rem;
+}
+
+.text-light {
+  color: #9ca3af;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Search Preview Styles */
+.search-bar-container {
+  position: relative;
+}
+
+.search-preview {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #2e2e2f;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  margin-top: 2px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 10;
+  max-width: 470px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+.preview-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-bottom: 1px solid #3e3e3f;
+  transition: background-color 0.2s;
+}
+
+.preview-item:hover {
+  background-color: #3a3a3b;
+}
+
+.preview-item img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-right: 1rem;
+}
+
+.preview-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.preview-year {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.preview-see-all {
+  padding: 0.75rem;
+  text-align: center;
+  color: #10b981;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-top: 1px solid #3e3e3f;
+}
+
+.preview-see-all:hover {
+  background-color: #3a3a3b;
+}
+
+.preview-no-results {
+  padding: 1rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}

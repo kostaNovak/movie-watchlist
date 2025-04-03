@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist - My List</title>
+    <!-- Link Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-content">
+            <h1>My Watchlist</h1>
+            <a href="index.html" class="nav-link">Search for movies</a>
+        </div>
+        <!-- No search bar on this page -->
+    </header>
+
+    <main id="main-watchlist-content" class="main-content container">
+        <!-- Placeholder for Empty Watchlist -->
+        <div class="placeholder" id="empty-watchlist">
+            <p>Your watchlist is looking a little empty...</p>
+            <a href="index.html" class="add-movies-link">
+                <i class="fa-solid fa-circle-plus"></i> Let's add some movies!
+            </a>
+        </div>
+
+        <!-- Area for Watchlist Items (Populated by JS) -->
+        <div id="watchlist-list" class="movie-list" style="display: none;">
+            <!-- Watchlist items will be injected here by JS -->
+            <!-- Example Structure (similar to index.html, but with remove button):
+            <div class="movie-item">
+                <img src="placeholder-poster.jpg" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <div class="movie-title-rating">
+                        <h2>Movie Title</h2>
+                        <p class="movie-rating"><i class="fa-solid fa-star"></i> 8.0</p>
+                    </div>
+                    <div class="movie-details">
+                        <span>164 min</span>
+                        <span>Action, Drama, Mystery</span>
+                        <button class="watchlist-btn remove" data-movie-id="tt1856101">
+                            <i class="fa-solid fa-circle-minus"></i> Remove
+                        </button>
+                    </div>
+                    <p class="movie-plot">Young Blade Runner K's discovery of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who's been missing for thirty years.</p>
+                </div>
+            </div>
+            <hr>
+            -->
+        </div>
+    </main>
+
+    <!-- Link JS for this page -->
+    <script src="watchlist.js" type="module" defer></script>
+</body>
+</html>
